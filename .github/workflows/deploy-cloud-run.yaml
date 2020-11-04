@@ -26,7 +26,7 @@ jobs:
           service: flask-helloworld
           region: asia-northeast1
           env_vars:
-            - PORT=80
+            - PORT: 80
 
       - name: Verify
         run: curl ${{ steps.deploy.outputs.url }}
