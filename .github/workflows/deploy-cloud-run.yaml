@@ -21,8 +21,8 @@ jobs:
         id: deploy
         uses: GoogleCloudPlatform/github-actions/deploy-cloudrun@master
         with:
-          image: gcr.io/cloudrun/hello:latest
+          image: ${{ secrets.DOCKER_HUB_USERNAME }}/flask-microservice
           service: flask-helloworld
-          region: asia-northeast-1
+          region: asia-northeast1
       - name: Verify
         run: curl ${{ steps.deploy.outputs.url }}
