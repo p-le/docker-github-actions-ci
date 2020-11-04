@@ -23,6 +23,6 @@ jobs:
         with:
           image: ${{ secrets.DOCKER_HUB_USERNAME }}/flask-microservice
           service: flask-helloworld
-
+          region: asia-northeast-1
       - name: Verify
         run: curl ${{ steps.deploy.outputs.url }}
